@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أكد (Akked) — Personal Data & Consent Guardian</title>
+  <meta name="description" content="أثبت المطلوب، واحفظ الباقي. منصة ذكية لتقليص مشاركة الوثائق وحماية الخصوصية ومشاركة الحد الأدنى الضروري من البيانات فقط.">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+
+  <style>
+    /* Inline animations & keyframes */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+      animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Persistent Sidebar Navigation -->
+    <aside class="sidebar" id="app-sidebar">
+      <!-- Sidebar Brand Header with Reference-matching Logo -->
+      <div class="sidebar-brand">
+        <div class="brand-logo-icon">
+          <!-- Reconstructed SVG Logo Icon matching Brand Reference -->
+          <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="6" width="16" height="3" rx="1.5" fill="#FFFFFF"/>
+            <rect x="4" y="12" width="16" height="3" rx="1.5" fill="#FFFFFF"/>
+            <rect x="4" y="18" width="16" height="3" rx="1.5" fill="#FFFFFF"/>
+            <rect x="4" y="24" width="16" height="3" rx="1.5" fill="#FFFFFF"/>
+            <rect x="4" y="30" width="16" height="3" rx="1.5" fill="#FFFFFF"/>
+            <path d="M22 4 L28 10 L28 30 L22 36 Z" fill="#50BE9B"/>
+            <line x1="28" y1="20" x2="36" y2="20" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="36" cy="20" r="3.5" fill="#50BE9B"/>
+          </svg>
+        </div>
+        <div class="brand-info">
+          <span class="brand-title" data-i18n="brandName">أكد</span>
+          <span class="brand-tagline" data-i18n="brandTagline">أثبت المطلوب، واحفظ الباقي</span>
+        </div>
+      </div>
+
+      <!-- Main Navigation Menu -->
+      <nav class="sidebar-nav">
+        <!-- Prominent Create Share Button -->
+        <div style="padding: 0 4px 12px;">
+          <button class="btn btn-primary" style="width: 100%; justify-content: center; padding: 12px;" onclick="AkkedApp.navigate('wizard')">
+            <span>➕</span>
+            <span data-i18n="createSecureShare">إنشاء مشاركة آمنة</span>
+          </button>
+        </div>
+
+        <div class="nav-section-title" data-i18n="navDashboard">لوحة التحكم</div>
+        
+        <a class="nav-item active" data-view="dashboard" onclick="AkkedApp.navigate('dashboard')">
+          <span class="nav-icon">📊</span>
+          <span data-i18n="navDashboard">لوحة التحكم</span>
+        </a>
+
+        <a class="nav-item" data-view="shares" onclick="AkkedApp.navigate('shares')">
+          <span class="nav-icon">📂</span>
+          <span data-i18n="navShares">المشاركات والإثباتات</span>
+        </a>
+
+        <a class="nav-item" data-view="verify" onclick="AkkedApp.navigate('verify')">
+          <span class="nav-icon">🔍</span>
+          <span data-i18n="navVerifyPortal">بوابة التحقق للجهات</span>
+        </a>
+
+        <div class="nav-section-title" data-i18n="navMyData">الخصوصية والأمان</div>
+
+        <a class="nav-item" data-view="entities" onclick="AkkedApp.navigate('entities')">
+          <span class="nav-icon">🏢</span>
+          <span data-i18n="navTrustedEntities">الجهات الموثوقة</span>
+        </a>
+
+        <a class="nav-item" data-view="mydata" onclick="AkkedApp.navigate('mydata')">
+          <span class="nav-icon">🪪</span>
+          <span data-i18n="navMyData">خزنة بياناتي</span>
+        </a>
+
+        <a class="nav-item" data-view="alerts" onclick="AkkedApp.navigate('alerts')">
+          <span class="nav-icon">🔔</span>
+          <span data-i18n="navAlerts">التنبيهات وسجل النشاط</span>
+          <span class="badge-count" id="sidebar-alerts-count" style="display: none;">0</span>
+        </a>
+
+        <a class="nav-item" data-view="settings" onclick="AkkedApp.navigate('settings')">
+          <span class="nav-icon">⚙️</span>
+          <span data-i18n="navSettings">الإعدادات</span>
+        </a>
+      </nav>
+
+      <!-- Sidebar Footer Privacy Badge -->
+      <div class="sidebar-footer">
+        <div class="privacy-badge-card">
+          <div class="privacy-badge-icon">🛡️</div>
+          <div class="privacy-badge-text">
+            <strong data-i18n="privacyFirst">خصوصيتك أولاً</strong><br>
+            <span style="font-size: 0.7rem; color: var(--text-muted);" data-i18n="localProcessingNotice">معالجة محلية 100%</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+      <!-- Top Application Bar -->
+      <header class="top-header">
+        <div class="header-left">
+          <button class="menu-toggle-btn" onclick="AkkedApp.toggleMobileSidebar()" aria-label="Toggle Navigation">
+            ☰
+          </button>
+          <div class="page-breadcrumb">
+            <span style="font-size: 0.88rem; color: var(--brand-slate);">منصة أكد</span>
+            <span>/</span>
+            <span class="current-page" id="page-breadcrumb-text">لوحة التحكم</span>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <!-- Language Switcher Button -->
+          <button class="header-btn" onclick="AkkedApp.toggleLanguage()" title="Change Language">
+            <span>🌐</span>
+            <span id="lang-toggle-text">English (LTR)</span>
+          </button>
+
+          <!-- Theme Switcher Button -->
+          <button class="header-btn header-btn-icon" onclick="AkkedApp.toggleTheme()" title="Switch Dark/Light Theme">
+            🌓
+          </button>
+
+          <!-- Notification Bell Button -->
+          <div class="notification-badge-wrapper">
+            <button class="header-btn header-btn-icon" onclick="AkkedApp.navigate('alerts')" title="Alerts">
+              🔔
+            </button>
+            <div class="notif-dot" id="header-notif-dot" style="display: none;"></div>
+          </div>
+
+          <!-- User Avatar Pill -->
+          <div class="user-pill" onclick="AkkedApp.navigate('settings')">
+            <div class="user-avatar">أ</div>
+            <span class="user-name" data-i18n="userProfileName">أثير الفهد</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dynamic View Container -->
+      <main class="content-area" id="view-container">
+        <!-- Rendered dynamically by AkkedApp.renderView() -->
+      </main>
+    </div>
+  </div>
+
+  <!-- Global Modal Dialog Container -->
+  <div class="modal-backdrop" id="global-modal-backdrop" onclick="if(event.target === this) AkkedApp.closeModal()">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <span style="font-weight: 800; font-size: 1.1rem; color: var(--brand-primary);" data-i18n="brandName">أكد</span>
+        <button class="close-modal-btn" onclick="AkkedApp.closeModal()">✕</button>
+      </div>
+      <div class="modal-body" id="global-modal-body">
+        <!-- Injected via AkkedApp.openModal() -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Toast Alerts Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Application Logic Scripts -->
+  <script src="js/i18n.js"></script>
+  <script src="js/crypto-utils.js"></script>
+  <script src="js/sample-docs.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/redaction-engine.js"></script>
+  <script src="js/components/dashboard.js"></script>
+  <script src="js/components/shares.js"></script>
+  <script src="js/components/wizard.js"></script>
+  <script src="js/components/verify.js"></script>
+  <script src="js/components/entities.js"></script>
+  <script src="js/components/mydata.js"></script>
+  <script src="js/components/alerts.js"></script>
+  <script src="js/components/settings.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
