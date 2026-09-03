@@ -278,6 +278,25 @@ window.AkkedApp = {
     if (backdrop) {
       backdrop.classList.remove('open');
     }
+  },
+
+  shareWebsite() {
+    const isAr = I18N.currentLang === 'ar';
+    const shareData = {
+      title: isAr ? 'منصة أكّد — أثبت المطلوب، واحفظ الباقي' : 'Akked — Prove what’s needed, protect the rest',
+      text: isAr ? 'منصة الخصوصية الرائدة لتقليص مشاركة الوثائق وحماية الهوية الشخصية ومساعد الوصول الشامل الذكي.' : 'Privacy-first selective disclosure and universal accessible assistant.',
+      url: 'https://atheerkf22.github.io/akked/'
+    };
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(shareData.url).catch(() => {});
+    }
+
+    if (navigator.share) {
+      navigator.share(shareData).catch(() => {});
+    }
+
+    this.showToast(isAr ? 'تم نسخ رابط الموقع بنجاح لمشاركته مع الجميع!' : 'Website link copied to clipboard!', 'success');
   }
 };
 
