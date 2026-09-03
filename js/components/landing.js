@@ -83,11 +83,6 @@ window.AkkedLanding = {
               ${I18N.t('landingHeadline')}
             </h1>
 
-            <!-- Concise Value Proposition -->
-            <p class="landing-hero-subtitle">
-              ${I18N.t('landingSubheadline')}
-            </p>
-
             <!-- Primary CTAs -->
             <div class="landing-hero-cta-group">
               <button class="btn btn-primary landing-btn-hero-primary" onclick="AkkedApp.navigate('dashboard')">

@@ -284,7 +284,7 @@ window.AkkedApp = {
     const isAr = I18N.currentLang === 'ar';
     const shareData = {
       title: isAr ? 'منصة أكّد — أثبت المطلوب، واحفظ الباقي' : 'Akked — Prove what’s needed, protect the rest',
-      text: isAr ? 'منصة الخصوصية الرائدة لتقليص مشاركة الوثائق وحماية الهوية الشخصية ومساعد الوصول الشامل الذكي.' : 'Privacy-first selective disclosure and universal accessible assistant.',
+      text: isAr ? 'منصة أكّد — أثبت المطلوب، واحفظ الباقي. منصة الخصوصية والإفصاح الانتقائي ومساعد الوصول الشامل الذكي.' : 'Akked — Privacy-first selective disclosure & AI guardian.',
       url: 'https://atheerkf22.github.io/akked/'
     };
 

@@ -339,7 +339,6 @@ const translations = {
 
     // Landing Page
     landingHeadline: 'أثبت المطلوب، واحفظ الباقي',
-    landingSubheadline: 'منصة الخصوصية الرائدة لتقليص مشاركة الوثائق وحماية الهوية؛ تتيح لك إثبات أهليتك واستحقاقك للجهات دون كشف بياناتك الحساسة أو إرسال مستنداتك الأصلية.',
     landingBtnLaunch: 'دخول لوحة التحكم — ابدأ الآن',
     landingBtnVerify: 'بوابة التحقق للجهات',
     
@@ -712,7 +711,6 @@ const translations = {
 
     // Landing Page
     landingHeadline: 'Prove what’s needed, protect the rest',
-    landingSubheadline: 'The privacy-first platform for credential minimization and identity preservation. Prove eligibility and credentials to organizations without exposing raw PII or sending unredacted documents.',
     landingBtnLaunch: 'Launch Dashboard — Get Started',
     landingBtnVerify: 'Verifier Portal for Organizations',
 
