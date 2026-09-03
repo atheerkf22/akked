@@ -1,5 +1,5 @@
 # أكد (Akked) — Personal Data & Consent Guardian
-> **"أثبت المطلوب، واحفظ الباقي" | "Prove what's needed, protect the rest"**
+> **"حارس البيانات الشخصية والموافقات" | "Personal Data & Consent Guardian"**
 
 A modern, responsive, bilingual (Arabic RTL / English LTR) web application and graduation project centered on the principle of **Minimum Necessary Disclosure (مبدأ الحد الأدنى من البيانات)**. 
 

@@ -70,8 +70,8 @@ window.AkkedLanding = {
               <picture class="landing-hero-logo-wrap">
                 <source srcset="assets/akkid-logo.webp" type="image/webp">
                 <img src="assets/akkid-logo.png" 
-                     alt="منصة أكد - أثبت المطلوب، واحفظ الباقي" 
-                     title="منصة أكد" 
+                     alt="منصة أكّد" 
+                     title="منصة أكّد" 
                      class="landing-hero-logo-img"
                      width="130" 
                      height="178">
