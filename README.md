@@ -81,7 +81,7 @@ This project adheres strictly to accessible, non-decorative typography guideline
    http://localhost:8000
    ```
 
----
+البرنامج التدريبي الذي نُفذ المشروع ضمنه: البرمجة التوليدية .
 
 ## 📄 Academic Project Documentation
 For the complete graduation project thesis, IEEE 830 functional requirements, AI engine mechanics, and privacy architecture, see:
